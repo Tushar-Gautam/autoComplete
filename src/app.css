@@ -1,0 +1,19 @@
+.app-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 10vh;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+@media screen and (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

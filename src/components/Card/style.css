@@ -1,0 +1,35 @@
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(25% - 40px);
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.card p strong {
+  color: #333;
+}

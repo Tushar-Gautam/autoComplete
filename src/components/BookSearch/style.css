@@ -1,0 +1,60 @@
+.book-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.book-search {
+  width: 100%;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.book-search input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+ul.results-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 80%;
+  background-color: #f9f9f9;
+  z-index: 20;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+ul.results-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+ul.results-list li:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.02);
+}
+
+.book-search .loading {
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+}
