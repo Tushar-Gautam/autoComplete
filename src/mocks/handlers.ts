@@ -1,7 +1,7 @@
 import { delay, http, HttpResponse } from "msw";
 import { authors, summaries, title } from "./data/data";
 
-const END_POINT = "http://localhost:5173/summaries";
+const END_POINT = "/api/summaries";
 
 interface Book {
   id: number;

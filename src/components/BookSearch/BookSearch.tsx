@@ -1,6 +1,6 @@
 import { ChangeEvent, Dispatch, FC, useState } from "react";
-import { fetchStreamResults } from "../../utils/fetchSearchResults";
 import "./style.css";
+import useFetchBooks from "../../hooks/useFetchBooks";
 
 interface Book {
   id: number;
@@ -19,32 +19,15 @@ const BookSearch: FC<BookSearchProps> = ({
   setSelectedBooks,
 }) => {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<Book[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const { results, isLoading } = useFetchBooks(query);
 
-  const handleInputChange = async (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setQuery(value);
-    if (value) {
-      setIsLoading(true);
-      try {
-        const data = await fetchStreamResults(value);
-        setResults(data && data.length > 0 ? data : []);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setResults([]);
-      } finally {
-        setIsLoading(false);
-      }
-    } else {
-      setResults([]);
-    }
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
   };
 
   const handleResultClick = (book: Book) => {
     setSelectedBooks([...selectedBooks, book]);
     setQuery("");
-    setResults([]);
   };
 
   return (
