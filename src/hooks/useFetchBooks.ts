@@ -1,12 +1,6 @@
-import { fetchStreamResults } from "../utils/fetchSearchResults";
 import { useState, useEffect } from "react";
-
-interface Book {
-  id: number;
-  summary: string;
-  title: string;
-  author: string;
-}
+import { fetchStreamResults } from "@utils";
+import type { Book } from "@utils";
 
 const useFetchBooks = (query: string) => {
   const [results, setResults] = useState<Book[]>([]);

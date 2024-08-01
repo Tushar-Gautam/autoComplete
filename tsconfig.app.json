@@ -31,8 +31,8 @@
     "rootDir": "./src",
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/index.ts"],
-      "@utils/*": ["src/utils/*"]
+      "@components": ["src/components/index.ts"],
+      "@utils": ["src/utils/index.ts"]
     }
   },
   "include": ["src"]

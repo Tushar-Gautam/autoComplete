@@ -8,14 +8,8 @@ import {
 } from "react";
 import { debounce } from "lodash";
 import "./style.css";
-import useFetchBooks from "../../hooks/useFetchBooks";
-
-interface Book {
-  id: number;
-  summary: string;
-  title: string;
-  author: string;
-}
+import type { Book } from "@utils";
+import useFetchBooks from "src/hooks/useFetchBooks";
 
 interface BookSearchProps {
   selectedBooks: Book[];
@@ -67,7 +61,7 @@ const BookSearch: FC<BookSearchProps> = ({
           <ul className="results-list">
             {results.map((book) => (
               <li key={book.id} onClick={() => handleResultClick(book)}>
-                {book.id}) {book.title}
+                {book.id}&#41; {book.title}
               </li>
             ))}
           </ul>

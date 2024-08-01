@@ -1,17 +1,9 @@
 import { delay, http, HttpResponse } from "msw";
 import { authors, summaries, title } from "./data/data";
-
-const END_POINT = "/api/summaries";
-
-interface Book {
-  id: number;
-  summary: string;
-  title: string;
-  author: string;
-}
+import { SEARCH_END_POINT, type Book } from "@utils";
 
 export const handlers = [
-  http.get(`${END_POINT}`, async ({ request }) => {
+  http.get(`${SEARCH_END_POINT}`, async ({ request }) => {
     const url = new URL(request.url);
     const word = url.searchParams.get("word");
     if (!word) {

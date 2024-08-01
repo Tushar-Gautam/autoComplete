@@ -2,21 +2,19 @@ import { FC } from "react";
 import "./style.css";
 
 interface CardProps {
-  book: {
-    id: number;
-    summary: string;
-    title: string;
-    author: string;
-  };
+  id: number;
+  summary: string;
+  title: string;
+  author: string;
 }
 
-const Card: FC<CardProps> = ({ book }) => {
+const Card: FC<CardProps> = ({ title, summary, author, id }) => {
   return (
-    <div className="card" key={book.id}>
-      <h3>{book.title}</h3>
-      <p>{book.summary}</p>
+    <div className="card" key={id}>
+      <h3>{title}</h3>
+      <p>{summary}</p>
       <p>
-        <strong>Author:</strong> {book.author}
+        <strong>Author:</strong> {author}
       </p>
     </div>
   );
