@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card Component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    <h3>
+      Sample Book
+    </h3>
+    <p>
+      This is a sample summary.
+    </p>
+    <p>
+      <strong>
+        Author:
+      </strong>
+       John Doe
+    </p>
+  </div>
+</DocumentFragment>
+`;

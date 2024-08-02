@@ -22,6 +22,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
 
     /* Additional settings */
     "sourceMap": true,
@@ -33,7 +34,8 @@
     "paths": {
       "@components": ["src/components/index.ts"],
       "@utils": ["src/utils/index.ts"]
-    }
+    },
+    "types": ["jest", "@testing-library/jest-dom"]
   },
-  "include": ["src"]
+  "include": ["src", "src/**/*.test.tsx"]
 }
